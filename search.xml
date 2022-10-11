@@ -4,6 +4,31 @@
   
     
     <entry>
+      <title>阿木云签二维码说明</title>
+      <link href="/2022/10/11/%E9%98%BF%E6%9C%A8%E4%BA%91%E7%AD%BE%E4%BA%8C%E7%BB%B4%E7%A0%81%E8%AF%B4%E6%98%8E/"/>
+      <url>/2022/10/11/%E9%98%BF%E6%9C%A8%E4%BA%91%E7%AD%BE%E4%BA%8C%E7%BB%B4%E7%A0%81%E8%AF%B4%E6%98%8E/</url>
+      
+        <content type="html"><![CDATA[<p> 二维码签到使用说明<br>1.目前二维码签到只能手动签到<br>2.因为资金有限，暂时没有对接腾讯云图文识别服务，所以只能你手动获取参数<br>3.手动获取参数步骤之一：微信小程序搜索草料二维码<br><a href="https://imgse.com/i/xtL711"><img src="https://s1.ax1x.com/2022/10/11/xtL711.jpg" alt="xtL711.jpg"></a><br>4.手动获取参数步骤之二：进入微信小程序之后选择解码<br><a href="https://imgse.com/i/xtO3HU"><img src="https://s1.ax1x.com/2022/10/11/xtO3HU.jpg" alt="xtO3HU.jpg"></a><br>5.手动获取参数步骤之三：将你的二维码上传之后（无视十秒）可获得一个链接，请复制。<br><a href="https://imgse.com/i/xtOJN4"><img src="https://s1.ax1x.com/2022/10/11/xtOJN4.jpg" alt="xtOJN4.jpg"></a><br>6.手动获取参数步骤之四：选择“enc：”之后的参数，随后填入云签到的参数框内即可签到成功  <br><a href="https://imgse.com/i/xtOag1"><img src="https://s1.ax1x.com/2022/10/11/xtOag1.jpg" alt="xtOag1.jpg"></a></p>]]></content>
+      
+      
+      <categories>
+          
+          <category> 文章 </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> 使用文档 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>自由播放器使用说明</title>
       <link href="/2022/10/10/%E4%B8%80%E8%B5%B7%E7%9C%8B%E8%A7%86%E9%A2%91%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/"/>
       <url>/2022/10/10/%E4%B8%80%E8%B5%B7%E7%9C%8B%E8%A7%86%E9%A2%91%E4%BD%BF%E7%94%A8%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3/</url>
