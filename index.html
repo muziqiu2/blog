@@ -418,13 +418,13 @@
       
         jQuery.ajax({
           type: 'GET',
-          url: 'https://v1.hitokoto.cn/?c=f&amp;encode=text',
+          url: 'https://v1.hitokoto.cn/?c=f&amp;encode=json',
           headers: {},
           dataType: 'json',
           success: function(result) {
             var apiText;
             if (result) {
-              var keys = ''.split(',');
+              var keys = 'hitokoto'.split(',');
               if (result instanceof Array) {
                 result = result[0];
               }
@@ -442,7 +442,7 @@
           },
           error: function(xhr, status, error) {
             if (error) {
-              console.error('Failed to request https://v1.hitokoto.cn/?c=f&amp;encode=text:', error);
+              console.error('Failed to request https://v1.hitokoto.cn/?c=f&amp;encode=json:', error);
             }
             typing(text);
           }
