@@ -1,0 +1,698 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=auto>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/logo.png">
+  <link rel="icon" href="/img/logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="author" content="AMU">
+  <meta name="keywords" content="">
+  
+    <meta name="description" content="哈噜哇&amp;nbsp;各位小伙伴们大家好哇 阿里云盘自从推出签到送VIP和延期之后，阿木几乎每天都精神紧绷，那是一天也不敢拉下啊，几乎起床的第一件事就是签到，不知道有没有小伙伴跟我一样的。 但就一个账号的话就还好，要是有多个账号来回切换真令人打脑壳。而且很容易遗忘，之前阿木也发现过一个油猴插件来实现自动签到，但阿里调整了api接口的访问频次之后，作者也关闭了自动签到改为手动。 今天阿木就给大家推荐一个">
+<meta property="og:type" content="article">
+<meta property="og:title" content="阿里云盘零成本自动签到">
+<meta property="og:url" content="https://bk.diaomu.cn/posts/765e37c4.html">
+<meta property="og:site_name" content="雕木博客">
+<meta property="og:description" content="哈噜哇&amp;nbsp;各位小伙伴们大家好哇 阿里云盘自从推出签到送VIP和延期之后，阿木几乎每天都精神紧绷，那是一天也不敢拉下啊，几乎起床的第一件事就是签到，不知道有没有小伙伴跟我一样的。 但就一个账号的话就还好，要是有多个账号来回切换真令人打脑壳。而且很容易遗忘，之前阿木也发现过一个油猴插件来实现自动签到，但阿里调整了api接口的访问频次之后，作者也关闭了自动签到改为手动。 今天阿木就给大家推荐一个">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.1rcfy37gvxwg.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.1n5zn042umkg.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.csc39iyjprs.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.7giiu7vqcu4g.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.57dsa33y0r28.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.75pl9ae27r40.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.47x76vclwji8.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.4bdk5h90zojk.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.txer22n9zn4.webp">
+<meta property="og:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.1qxrsannu5r4.webp">
+<meta property="article:published_time" content="2023-07-13T02:52:00.000Z">
+<meta property="article:modified_time" content="2023-07-13T02:53:05.654Z">
+<meta property="article:author" content="AMU">
+<meta property="article:tag" content="教程">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.1rcfy37gvxwg.webp">
+  
+  
+  
+  <title>阿里云盘零成本自动签到 - 雕木博客</title>
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
+
+
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/hint.css/2.7.0/hint.min.css" />
+
+  <link  rel="stylesheet" href="https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+<!-- Do not modify the link that theme dependent icons -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_lbnruvf0jn.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+
+  <link id="highlight-css" rel="stylesheet" href="/css/highlight.css" />
+  
+    <link id="highlight-css-dark" rel="stylesheet" href="/css/highlight-dark.css" />
+  
+
+
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    Fluid.ctx = Object.assign({}, Fluid.ctx)
+    var CONFIG = {"hostname":"bk.diaomu.cn","root":"/","version":"1.9.4","typing":{"enable":true,"typeSpeed":70,"cursorChar":"_","loop":false,"scope":[]},"anchorjs":{"enable":true,"element":"h1,h2,h3,h4,h5,h6","placement":"left","visible":"hover","icon":""},"progressbar":{"enable":true,"height_px":3,"color":"#29d","options":{"showSpinner":false,"trickleSpeed":100}},"code_language":{"enable":true,"default":"TEXT"},"copy_btn":true,"image_caption":{"enable":true},"image_zoom":{"enable":true,"img_url_replace":["",""]},"toc":{"enable":true,"placement":"right","headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":0},"lazyload":{"enable":true,"loading_img":"/img/loading.gif","onlypost":false,"offset_factor":2},"web_analytics":{"enable":false,"follow_dnt":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null,"path":"window.location.pathname","ignore_local":false}},"search_path":"/local-search.xml"};
+
+    if (CONFIG.web_analytics.follow_dnt) {
+      var dntVal = navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack;
+      Fluid.ctx.dnt = dntVal && (dntVal.startsWith('1') || dntVal.startsWith('yes') || dntVal.startsWith('on'));
+    }
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+  
+
+
+  
+<meta name="generator" content="Hexo 5.4.2">
+<style>.github-emoji { position: relative; display: inline-block; width: 1.2em; min-height: 1.2em; overflow: hidden; vertical-align: top; color: transparent; }  .github-emoji > span { position: relative; z-index: 10; }  .github-emoji img, .github-emoji .fancybox { margin: 0 !important; padding: 0 !important; border: none !important; outline: none !important; text-decoration: none !important; user-select: none !important; cursor: auto !important; }  .github-emoji img { height: 1.2em !important; width: 1.2em !important; position: absolute !important; left: 50% !important; top: 50% !important; transform: translate(-50%, -50%) !important; user-select: none !important; cursor: auto !important; } .github-emoji-fallback { color: inherit; } .github-emoji-fallback img { opacity: 0 !important; }</style>
+<link rel="alternate" href="/atom.xml" title="雕木博客" type="application/atom+xml">
+</head>
+
+
+<body>
+  
+
+  <header>
+    
+
+<div class="header-inner" style="height: 70vh;">
+  <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand" href="/">
+      <strong>雕木博客</strong>
+    </a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                <span>首页</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                <span>归档</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                <span>标签</span>
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                <span>友链</span>
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" target="_self" href="javascript:;" data-toggle="modal" data-target="#modalSearch" aria-label="Search">
+              <i class="iconfont icon-search"></i>
+            </a>
+          </li>
+          
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" target="_self" href="javascript:;" aria-label="Color Toggle">
+              <i class="iconfont icon-dark" id="color-toggle-icon"></i>
+            </a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+
+<div id="banner" class="banner" parallax=true
+     style="background: url('/img/default.png') no-repeat center center; background-size: cover;">
+  <div class="full-bg-img">
+    <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+      <div class="banner-text text-center fade-in-up">
+        <div class="h2">
+          
+            <span id="subtitle" data-typed-text="阿里云盘零成本自动签到"></span>
+          
+        </div>
+
+        
+          
+  <div class="mt-3">
+    
+    
+      <span class="post-meta">
+        <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+        <time datetime="2023-07-13 10:52" pubdate>
+          2023年7月13日 上午
+        </time>
+      </span>
+    
+  </div>
+
+  <div class="mt-1">
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-chart"></i>
+        
+          3.2k 字
+        
+      </span>
+    
+
+    
+      <span class="post-meta mr-2">
+        <i class="iconfont icon-clock-fill"></i>
+        
+        
+        
+          27 分钟
+        
+      </span>
+    
+
+    
+    
+  </div>
+
+
+        
+      </div>
+
+      
+    </div>
+  </div>
+</div>
+
+</div>
+
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid nopadding-x">
+  <div class="row nomargin-x">
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+
+    </div>
+
+    <div class="col-lg-8 nopadding-x-md">
+      <div class="container nopadding-x-md" id="board-ctn">
+        <div id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">阿里云盘零成本自动签到</h1>
+            
+            
+              <div class="markdown-body">
+                
+                <p>哈噜哇&nbsp;各位小伙伴们大家好哇</p>
+<p>阿里云盘自从推出签到送VIP和延期之后，阿木几乎每天都精神紧绷，那是一天也不敢拉下啊，<strong>几乎起床的第一件事就是签到，不知道有没有小伙伴跟我一样的。</strong></p>
+<p>但就一个账号的话就还好，要是有多个账号来回切换真令人打脑壳。而且很容易遗忘，之前阿木也发现过一个油猴插件来实现自动签到，但阿里调整了api接口的访问频次之后，作者也关闭了自动签到改为手动。</p>
+<p><strong>今天阿木就给大家推荐一个无需服务器、无需部署、配置简单、支持多账号免费且“一劳永逸“的全自动签到方法 一起来看看吧。</strong></p>
+<p>先上自动签到运行截图</p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.1rcfy37gvxwg.webp" srcset="/img/loading.gif" lazyload></p>
+<h2 id="正式教程"><a href="#正式教程" class="headerlink" title="正式教程"></a>正式教程</h2><p>1、首先打开金山文档&nbsp; &nbsp;&nbsp;</p>
+<p>(<a target="_blank" rel="noopener" href="https://www.kdocs.cn/">https://www.kdocs.cn/</a>)</p>
+<p>登录之后 点击<strong>新建</strong>，<strong>office文档</strong>，<strong>表格</strong>。</p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.1n5zn042umkg.webp" srcset="/img/loading.gif" lazyload></p>
+<p>2、然后选择&nbsp;<strong>效率-&gt;高级开发-&gt;脚本编辑器</strong></p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.csc39iyjprs.webp" srcset="/img/loading.gif" lazyload></p>
+<p>3、选择<strong>创建脚本-&gt;文档共享脚本</strong>，并重名为 阿里云盘自动签到</p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.7giiu7vqcu4g.webp" srcset="/img/loading.gif" lazyload></p>
+<p>4、点击<strong>服务-&gt;添加服务-&gt;将三个服务全部添加进去</strong></p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.57dsa33y0r28.webp" srcset="/img/loading.gif" lazyload></p>
+<p>5、将下列代码复制到编辑器中，并点击保存，然后关闭脚本编辑器，<strong>是脚本编辑器不是金山文档哈</strong></p>
+<figure class="highlight java"><table><tbody><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-type">var</span> <span class="hljs-variable">myDate</span> <span class="hljs-operator">=</span> <span class="hljs-keyword">new</span> <span class="hljs-title class_">Date</span>();<br><span class="hljs-type">var</span> <span class="hljs-variable">data_time</span> <span class="hljs-operator">=</span> myDate.toLocaleDateString()<br><br>function <span class="hljs-title function_">sleep</span><span class="hljs-params">(d)</span>{<br>  <span class="hljs-keyword">for</span>(<span class="hljs-type">var</span> <span class="hljs-variable">t</span> <span class="hljs-operator">=</span> Date.now();Date.now() - t &lt;= d;);<br>}<br><span class="hljs-keyword">var</span> value= <span class="hljs-string">""</span><br><span class="hljs-keyword">for</span> (<span class="hljs-type">let</span> <span class="hljs-variable">ii</span> <span class="hljs-operator">=</span> <span class="hljs-number">2</span>; ii &lt;= <span class="hljs-number">20</span>; ii++){<br>  dyg = <span class="hljs-string">"A"</span>+ii<br><br>  <span class="hljs-type">var</span> <span class="hljs-variable">refresh_token</span> <span class="hljs-operator">=</span> Application.Range(dyg).Text<br>  <span class="hljs-title function_">if</span><span class="hljs-params">(refresh_token != <span class="hljs-string">""</span>)</span>{<br>    <span class="hljs-comment">// 发起网络请求-获取token</span><br>    <span class="hljs-type">let</span> <span class="hljs-variable">data</span> <span class="hljs-operator">=</span> HTTP.post(<span class="hljs-string">"https://auth.aliyundrive.com/v2/account/token"</span>,<br>          JSON.stringify({<br>          <span class="hljs-string">"grant_type"</span>: <span class="hljs-string">"refresh_token"</span>,<br>          <span class="hljs-string">"refresh_token"</span>:refresh_token<br>          })<br>    )<br>    data = data.json()<br>    <span class="hljs-type">var</span> <span class="hljs-variable">access_token</span> <span class="hljs-operator">=</span> data[<span class="hljs-string">'access_token'</span>]<br>    <span class="hljs-type">var</span> <span class="hljs-variable">phone</span> <span class="hljs-operator">=</span> data[<span class="hljs-string">"user_name"</span>]<br><br>    <span class="hljs-keyword">if</span>  (access_token == undefined){<br>      <span class="hljs-type">var</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span><span class="hljs-string">"单元格【"</span>+dyg+<span class="hljs-string">"】内的token值错误，程序执行失败，请重新复制正确的token值"</span>+<span class="hljs-string">"\n"</span><br>    }<span class="hljs-keyword">else</span>{<br>      <span class="hljs-keyword">try</span>{<br>        <span class="hljs-type">var</span> <span class="hljs-variable">access_token2</span> <span class="hljs-operator">=</span> <span class="hljs-string">'Bearer '</span>+access_token<br>        <span class="hljs-comment">// 签到</span><br>        <span class="hljs-type">let</span> <span class="hljs-variable">data2</span> <span class="hljs-operator">=</span> HTTP.post(<span class="hljs-string">"https://member.aliyundrive.com/v1/activity/sign_in_list"</span>,<br>              JSON.stringify({<span class="hljs-string">"_rx-s"</span>: <span class="hljs-string">"mobile"</span>}),<br>              {headers:{<span class="hljs-string">"Authorization"</span>:access_token2}}<br>        )<br>        data2=data2.json()<br>        <span class="hljs-type">var</span> <span class="hljs-variable">signin_count</span> <span class="hljs-operator">=</span> data2[<span class="hljs-string">'result'</span>][<span class="hljs-string">'signInCount'</span>]<br>        <span class="hljs-type">var</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span>value+ <span class="hljs-string">"账号："</span>+data[<span class="hljs-string">"user_name"</span>]+<span class="hljs-string">"-签到成功, 本月累计签到"</span>+ signin_count+<span class="hljs-string">"天"</span>+<span class="hljs-string">"\n"</span><br><br>      }<span class="hljs-keyword">catch</span>{<br>        <span class="hljs-type">var</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span><span class="hljs-string">"单元格【"</span>+dyg+<span class="hljs-string">"】内的token签到失败"</span>+<span class="hljs-string">"\n"</span><br>        <span class="hljs-keyword">return</span><br>      }<br>      sleep(<span class="hljs-number">1000</span>)<br><br>      <span class="hljs-type">var</span> <span class="hljs-variable">sflq</span> <span class="hljs-operator">=</span> Application.Range(<span class="hljs-string">"B"</span>+ii).Text<br>      <span class="hljs-title function_">if</span> <span class="hljs-params">(sflq == <span class="hljs-string">"是"</span>)</span>{<br>        <span class="hljs-keyword">try</span>{<br>          <span class="hljs-comment">// 领取奖励</span><br>          <span class="hljs-type">let</span> <span class="hljs-variable">data3</span> <span class="hljs-operator">=</span> HTTP.post(<br>            <span class="hljs-string">"https://member.aliyundrive.com/v1/activity/sign_in_reward?_rx-s=mobile"</span>,<br>            JSON.stringify({<span class="hljs-string">"signInDay"</span>: signin_count}),<br>            {headers:{<span class="hljs-string">"Authorization"</span>:access_token2}}<br>          )<br>          data3=data3.json()<br>          <span class="hljs-type">var</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> value +<span class="hljs-string">"本次签到获得"</span>+data3[<span class="hljs-string">"result"</span>][<span class="hljs-string">"name"</span>] +<span class="hljs-string">","</span>+data3[<span class="hljs-string">"result"</span>][<span class="hljs-string">"description"</span>]+<span class="hljs-string">"\n"</span><br>        }<span class="hljs-keyword">catch</span>{<br>              <span class="hljs-type">var</span> <span class="hljs-variable">value</span> <span class="hljs-operator">=</span> value+ <span class="hljs-string">"账号："</span>+data[<span class="hljs-string">"user_name"</span>]+<span class="hljs-string">"-领取奖励失败"</span>+<span class="hljs-string">"\n"</span><br>        }<br>      }<span class="hljs-keyword">else</span>{<br>        value = value +<span class="hljs-string">"   奖励待领取"</span>+<span class="hljs-string">"\n"</span><br>      }<br>    }<br>  }<br>}<br>console.log(value)<br><span class="hljs-type">var</span> <span class="hljs-variable">sftz</span> <span class="hljs-operator">=</span> Application.Range(<span class="hljs-string">"E"</span>+<span class="hljs-number">1</span>).Text<br><span class="hljs-title function_">if</span> <span class="hljs-params">(sftz==<span class="hljs-string">"是"</span>)</span>{<br>  <span class="hljs-type">var</span> <span class="hljs-variable">jsyx</span> <span class="hljs-operator">=</span> Application.Range(<span class="hljs-string">"E"</span>+<span class="hljs-number">2</span>).Text<br><br>  <span class="hljs-type">var</span> <span class="hljs-variable">zdyfs</span> <span class="hljs-operator">=</span> Application.Range(<span class="hljs-string">"H"</span>+<span class="hljs-number">1</span>).Text<br>  <span class="hljs-title function_">if</span> <span class="hljs-params">(zdyfs == <span class="hljs-string">"是"</span>)</span>{<br>    <span class="hljs-type">var</span> <span class="hljs-variable">zdy_host</span> <span class="hljs-operator">=</span> Application.Range(<span class="hljs-string">"H"</span>+<span class="hljs-number">2</span>).Text<br>    <span class="hljs-type">var</span> <span class="hljs-variable">zdy_post</span> <span class="hljs-operator">=</span>Number(Application.Range(<span class="hljs-string">"H"</span>+<span class="hljs-number">3</span>).Text)<br>    <span class="hljs-type">var</span> <span class="hljs-variable">zdy_username</span> <span class="hljs-operator">=</span> Application.Range(<span class="hljs-string">"H"</span>+<span class="hljs-number">4</span>).Text<br>    <span class="hljs-type">var</span> <span class="hljs-variable">zdy_pasd</span> <span class="hljs-operator">=</span> Application.Range(<span class="hljs-string">"H"</span>+<span class="hljs-number">5</span>).Text<br>  }<span class="hljs-keyword">else</span>{<br>    <span class="hljs-type">var</span> <span class="hljs-variable">zdy_host</span> <span class="hljs-operator">=</span> <span class="hljs-string">"smtp.163.com"</span><br>    <span class="hljs-type">var</span> <span class="hljs-variable">zdy_post</span> <span class="hljs-operator">=</span> <span class="hljs-number">465</span><br>    <span class="hljs-type">var</span> <span class="hljs-variable">zdy_username</span> <span class="hljs-operator">=</span> <span class="hljs-string">"77777777@163.com"</span><br>    <span class="hljs-type">var</span> <span class="hljs-variable">zdy_pasd</span> <span class="hljs-operator">=</span> <span class="hljs-string">"7777777"</span><br>  }<br><br>    <span class="hljs-comment">// 配置发送邮箱</span><br><br>  <span class="hljs-type">let</span> <span class="hljs-variable">mailer</span> <span class="hljs-operator">=</span> SMTP.login({<br>    host: zdy_host, <span class="hljs-comment">// 邮箱 的SMTP服务器的域名</span><br>    port: zdy_post,<br>    username: zdy_username, <span class="hljs-comment">// 邮箱地址</span><br>    password:zdy_pasd, <span class="hljs-comment">// 邮箱的SMTP密码，非密码</span><br>    secure: <span class="hljs-literal">true</span><br>  });<br><br>  <br>  <span class="hljs-keyword">if</span>(jsyx != <span class="hljs-string">"fs8484848@163.com"</span>){<br>    <span class="hljs-keyword">try</span>{<br>      mailer.send({<br>          from: <span class="hljs-string">"阿里云盘签到&lt;"</span>+zdy_username+<span class="hljs-string">"&gt;"</span>, <span class="hljs-comment">// 发件人</span><br>          to: jsyx, <span class="hljs-comment">// 收件人</span><br>          subject: <span class="hljs-string">"阿里云盘签到通知-"</span>+data_time, <span class="hljs-comment">// 主题</span><br>          text: value, <span class="hljs-comment">// 文本</span><br>      })<br>    }<span class="hljs-keyword">catch</span>(error){<br>      console.log(<span class="hljs-string">"发送邮件失败"</span>+error)<br>    }<br>  }<span class="hljs-keyword">else</span>{<br>    console.log(<span class="hljs-string">"不可发送至该邮箱"</span>)<br>  }<br>}<br></code></pre></td></tr></tbody></table></figure>
+
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.75pl9ae27r40.webp" srcset="/img/loading.gif" lazyload></p>
+<p>6、获取自己阿里云盘token，<strong>打开阿里云盘网页版主页、F12打开开发者，找到如下图所示的地方，复制refresh_token</strong></p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.47x76vclwji8.webp" srcset="/img/loading.gif" lazyload></p>
+<p>7、将刚才复制的<strong>refresh_token</strong>粘贴到表格中，并创建别的信息&nbsp;保存如下图所示</p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.4bdk5h90zojk.webp" srcset="/img/loading.gif" lazyload></p>
+<p>8、打开脚本编辑器 点击运行 测试一下 出现如下图所示的日志 就证明刚才的配置没问题。</p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.txer22n9zn4.webp" srcset="/img/loading.gif" lazyload></p>
+<p>9、最后 <strong>找到效率-&gt;高级开发-&gt;定时任务-&gt;创建任务</strong> 选择一个合适的时间 选择刚刚创建的脚本 <strong>点击</strong>&nbsp;确认即可。</p>
+<p><img src="https://cdn.staticaly.com/gh/muziqiu2/picx-images-hosting@master/20230713/640.1qxrsannu5r4.webp" srcset="/img/loading.gif" lazyload></p>
+<p><strong>这样就能实现阿里云盘每天自动签到啦！不过这个token值每月是会刷新的，并不是一劳永逸，大家记得及时更换哦！</strong></p>
+<p>另外如果需要签到多个账号 直接在Excel表格里增加对应的token即可。</p>
+
+                
+              </div>
+            
+            <hr/>
+            <div>
+              <div class="post-metas my-3">
+  
+  
+    <div class="post-meta">
+      <i class="iconfont icon-tags"></i>
+      
+        <a href="/tags/%E6%95%99%E7%A8%8B/">#教程</a>
+      
+    </div>
+  
+</div>
+
+
+              
+  
+
+  <div class="license-box my-3">
+    <div class="license-title">
+      <div>阿里云盘零成本自动签到</div>
+      <div>https://bk.diaomu.cn/posts/765e37c4.html</div>
+    </div>
+    <div class="license-meta">
+      
+        <div class="license-meta-item">
+          <div>作者</div>
+          <div>AMU</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>发布于</div>
+          <div>2023年7月13日</div>
+        </div>
+      
+      
+        <div class="license-meta-item license-meta-date">
+          <div>更新于</div>
+          <div>2023年7月13日</div>
+        </div>
+      
+      
+        <div class="license-meta-item">
+          <div>许可协议</div>
+          <div>
+            
+              
+              
+                <a target="_blank" href="https://creativecommons.org/licenses/by/4.0/">
+                  <span class="hint--top hint--rounded" aria-label="BY - 署名">
+                    <i class="iconfont icon-by"></i>
+                  </span>
+                </a>
+              
+            
+          </div>
+        </div>
+      
+    </div>
+    <div class="license-icon iconfont"></div>
+  </div>
+
+
+
+              
+                <div class="post-prevnext my-3">
+                  <article class="post-prev col-6">
+                    
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/posts/5d6dedb1.html" title="QQ Windows全新体验版上架官网">
+                        <span class="hidden-mobile">QQ Windows全新体验版上架官网</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="twikoo"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#comments', function() {
+      Fluid.utils.createScript('https://lib.baomitu.com/twikoo/1.6.8/twikoo.all.min.js', function() {
+        var options = Object.assign(
+          {"envId":"https://diaomu.zeabur.app/","region":null,"path":"window.location.pathname"},
+          {
+            el: '#twikoo',
+            path: 'window.location.pathname',
+            onCommentLoaded: function() {
+              var imgSelector = '#twikoo .tk-content img:not(.tk-owo-emotion)';
+              Fluid.plugins.imageCaption(imgSelector);
+              Fluid.plugins.fancyBox(imgSelector);
+            }
+          }
+        )
+        twikoo.init(options)
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div class="side-col d-none d-lg-block col-lg-2">
+      
+  <aside class="sidebar" style="margin-left: -1rem">
+    <div id="toc">
+  <p class="toc-header">
+    <i class="iconfont icon-list"></i>
+    <span>目录</span>
+  </p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+
+
+  </aside>
+
+
+    </div>
+  </div>
+</div>
+
+
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+  
+
+
+
+
+
+
+
+    
+
+    
+      <a id="scroll-top-button" aria-label="TOP" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v" for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+    
+
+    
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+  
+    <div class="footer-content">
+       <a href="https://diaomu.cn" target="_blank" rel="nofollow noopener"><span>雕木</span></a> <i class="iconfont icon-love"></i> <a href="https://www.diaomu.cn" target="_blank" rel="nofollow noopener"><span>旧雨烟阁工作室</span></a> 
+    </div>
+  
+  
+  
+    <!-- 备案信息 ICP for China -->
+    <div class="beian">
+  <span>
+    <a href="http://beian.miit.gov.cn/" target="_blank" rel="nofollow noopener">
+      琼ICP备2022009867号-2
+    </a>
+  </span>
+  
+</div>
+
+  
+  
+</div>
+
+  </footer>
+
+  <!-- Scripts -->
+  
+  <script  src="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://lib.baomitu.com/nprogress/0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":100})
+    NProgress.start()
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://lib.baomitu.com/jquery/3.6.0/jquery.min.js" ></script>
+<script  src="https://lib.baomitu.com/twitter-bootstrap/4.6.1/js/bootstrap.min.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+
+  <script  src="https://lib.baomitu.com/typed.js/2.0.12/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var subtitle = document.getElementById('subtitle');
+      if (!subtitle || !typing) {
+        return;
+      }
+      var text = subtitle.getAttribute('data-typed-text');
+      
+        typing(text);
+      
+    })(window, document);
+  </script>
+
+
+
+
+  
+    <script  src="/js/img-lazyload.js" ></script>
+  
+
+
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/tocbot/4.18.2/tocbot.min.js', function() {
+    var toc = jQuery('#toc');
+    if (toc.length === 0 || !window.tocbot) { return; }
+    var boardCtn = jQuery('#board-ctn');
+    var boardTop = boardCtn.offset().top;
+
+    window.tocbot.init(Object.assign({
+      tocSelector     : '#toc-body',
+      contentSelector : '.markdown-body',
+      linkClass       : 'tocbot-link',
+      activeLinkClass : 'tocbot-active-link',
+      listClass       : 'tocbot-list',
+      isCollapsedClass: 'tocbot-is-collapsed',
+      collapsibleClass: 'tocbot-is-collapsible',
+      scrollSmooth    : true,
+      includeTitleTags: true,
+      headingsOffset  : -boardTop,
+    }, CONFIG.toc));
+    if (toc.find('.toc-list-item').length > 0) {
+      toc.css('visibility', 'visible');
+    }
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('tocbot' in window) {
+        tocbot.refresh();
+        var toc = jQuery('#toc');
+        if (toc.length === 0 || !tocbot) {
+          return;
+        }
+        if (toc.find('.toc-list-item').length > 0) {
+          toc.css('visibility', 'visible');
+        }
+      }
+    });
+  });
+</script>
+
+
+  <script src=https://lib.baomitu.com/clipboard.js/2.0.11/clipboard.min.js></script>
+
+  <script>Fluid.plugins.codeWidget();</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/anchor-js/4.3.1/anchor.min.js', function() {
+    window.anchors.options = {
+      placement: CONFIG.anchorjs.placement,
+      visible  : CONFIG.anchorjs.visible
+    };
+    if (CONFIG.anchorjs.icon) {
+      window.anchors.options.icon = CONFIG.anchorjs.icon;
+    }
+    var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+    var res = [];
+    for (var item of el) {
+      res.push('.markdown-body > ' + item.trim());
+    }
+    if (CONFIG.anchorjs.placement === 'left') {
+      window.anchors.options.class = 'anchorjs-link-left';
+    }
+    window.anchors.add(res.join(', '));
+
+    Fluid.events.registerRefreshCallback(function() {
+      if ('anchors' in window) {
+        anchors.removeAll();
+        var el = (CONFIG.anchorjs.element || 'h1,h2,h3,h4,h5,h6').split(',');
+        var res = [];
+        for (var item of el) {
+          res.push('.markdown-body > ' + item.trim());
+        }
+        if (CONFIG.anchorjs.placement === 'left') {
+          anchors.options.class = 'anchorjs-link-left';
+        }
+        anchors.add(res.join(', '));
+      }
+    });
+  });
+</script>
+
+
+  
+<script>
+  Fluid.utils.createScript('https://lib.baomitu.com/fancybox/3.5.7/jquery.fancybox.min.js', function() {
+    Fluid.plugins.fancyBox();
+  });
+</script>
+
+
+  <script>Fluid.plugins.imageCaption();</script>
+
+  <script  src="/js/local-search.js" ></script>
+
+
+
+
+
+<!-- 主题的启动项，将它保持在最底部 -->
+<!-- the boot of the theme, keep it at the bottom -->
+<script  src="/js/boot.js" ></script>
+
+
+  
+
+  <noscript>
+    <div class="noscript-warning">博客在允许 JavaScript 运行的环境下浏览效果更佳</div>
+  </noscript>
+</body>
+</html>
