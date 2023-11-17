@@ -4,6 +4,25 @@
   
     
     <entry>
+      <title>免费图床PicX使用教程</title>
+      <link href="/posts/57f812a1.html"/>
+      <url>/posts/57f812a1.html</url>
+      
+        <content type="html"><![CDATA[<h2 id="创建-GitHub-Token"><a href="#创建-GitHub-Token" class="headerlink" title="创建 GitHub Token"></a>创建 GitHub Token</h2><p>PicX 的图床服务依赖 GitHub Token，在开始使用之前，你必须先 <strong><a href="https://github.com/settings/tokens/new">创建</a></strong> 一个带有 <code>repo</code> 权限的 GitHub Token。</p><p>点击 <a href="https://github.com/settings/tokens/new">https://github.com/settings/tokens/new</a> 快速新建 GitHub Token</p><p><img src="https://free.tc.mofashi.ltd/2/2023/11/17/65573f43ea9c5.png"></p><p>点击 <strong><code>Generate token</code></strong> 按钮，生成 GitHub Token。</p><p><img src="https://free.tc.mofashi.ltd/2/2023/11/17/65573f7e5f165.png"></p><p><img src="https://free.tc.mofashi.ltd/2/2023/11/17/65573f803ba5d.png"></p><blockquote><p>注意</p><p><strong>新生成的 Token 只会显示一次，请妥善保存，如有遗失，重新生成即可。</strong></p></blockquote><h2 id="配置图床"><a href="#配置图床" class="headerlink" title="配置图床"></a>配置图床</h2><h3 id="一键自动配置"><a href="#一键自动配置" class="headerlink" title="一键自动配置"></a>一键自动配置</h3><p>填写 GitHub Token，点击 <strong><code>一键自动配置</code></strong> 按钮会自动创建 GitHub 仓库，并完成仓库、分支和目录之间的绑定。</p><blockquote><ul><li>自动创建仓库：<code>picx-images-hosting</code></li><li>自动创建分支：<code>master</code></li><li>自动创建目录：<code>yyyyMMdd</code> (当天日期，例如：<code>20230403</code>)</li></ul></blockquote><p><strong>如果你是第一次使用 PicX，那么推荐使用一键自动配置，非常方便</strong>。当然你也可以随时切换成手动配置。</p><p><img src="https://free.tc.mofashi.ltd/2/2023/11/17/65574050933b5.png"></p><h3 id="手动配置"><a href="#手动配置" class="headerlink" title="手动配置"></a>手动配置</h3><p>对于 PicX 的老用户，或者你准备使用一个已有的 GitHub 仓库做图床，使用手动配置更为灵活。</p><p><img src="https://free.tc.mofashi.ltd/2/2023/11/17/65574050900e8.png"></p><h2 id="上传图片"><a href="#上传图片" class="headerlink" title="上传图片"></a>上传图片</h2><h3 id="选择图片"><a href="#选择图片" class="headerlink" title="选择图片"></a>选择图片</h3><ul><li><p>可以通过 <strong>拖拽图片</strong> 到上传区域进行上传。</p></li><li><p>可以通过 <strong>复制图片</strong>，然后 <strong>粘贴</strong> 到上传区域进行上传。</p><blockquote><p>粘贴图片快捷键 <strong><code>Ctrl + V</code></strong> 或 <strong><code>Command + V</code></strong></p></blockquote></li><li><p>可以通过点击上传区域，通过 <strong>选择文件</strong> 的方式选择需要上传的图片。</p></li></ul><p><img src="https://free.tc.mofashi.ltd/2/2023/11/17/655740cf9dd52.png"></p><h3 id="上传图片-1"><a href="#上传图片-1" class="headerlink" title="上传图片"></a>上传图片</h3><p>点击 <strong><code>上传</code></strong> 按钮或使用 PicX 提供的快捷键 <strong><code>Ctrl + S</code></strong> 或 <strong><code>Command + S</code></strong> 进行上传图片。</p><p><img src="https://free.tc.mofashi.ltd/2/2023/11/17/65574100502b0.png"></p><h3 id="复制图片链接"><a href="#复制图片链接" class="headerlink" title="复制图片链接"></a>复制图片链接</h3><p>图片上传成功后，PicX 会自动复制图片链接到系统剪贴板，你也可以手动点击 <strong><code>复制图片链接</code></strong> ，然后通过快捷键 <strong><code>Ctrl + V</code></strong> 或 <strong><code>Command + V</code></strong> 粘贴使用。</p><p><img src="https://free.tc.mofashi.ltd/2/2023/11/17/6557412bd8c9c.png"></p><p>picx图床在线地址：<a href="https://picx.xpoet.cn/">https://picx.xpoet.cn</a></p>]]></content>
+      
+      
+      
+        <tags>
+            
+            <tag> 使用文档 </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    
+    
+    <entry>
       <title>自由播放器使用教程</title>
       <link href="/posts/68654a01.html"/>
       <url>/posts/68654a01.html</url>
