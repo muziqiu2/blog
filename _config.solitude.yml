@@ -1,0 +1,49 @@
+# ==============================================
+# Solitude 主题配置（站点级覆盖）
+# 文档：https://solitude.js.org
+# 说明：本文件会与主题自带 _config.yml 深度合并，只需写需要覆盖的项
+# ==============================================
+
+# ---------------------------
+# 网站信息
+# ---------------------------
+site:
+  name:
+    class: text
+    custom: 阿木
+  icon: /img/pwa/favicon.png
+
+# ---------------------------
+# 导航栏
+# ---------------------------
+nav:
+  menu:
+    首页: /
+    文章:
+      归档: /archives/ || fas fa-folder-closed
+      分类: /categories/ || fas fa-clone
+      标签: /tags/ || fas fa-tags
+    友链:
+      友情链接: /links/ || fas fa-user-group
+    我的:
+      关于: /about/ || fas fa-user
+      音乐馆: /music/ || fas fa-music
+
+# ---------------------------
+# 侧边栏信息卡
+# ---------------------------
+aside:
+  my_card:
+    author:
+      img: /img/logo.png
+    description: 追逐光，成为光
+    information:
+      Github: https://github.com/muziqiu2 || fab fa-github
+
+# ---------------------------
+# 页脚（备案信息）
+# ---------------------------
+footer:
+  beian:
+    - name: 鲁ICP备2022005744号-3
+      url: https://beian.miit.gov.cn/

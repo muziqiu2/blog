@@ -3,11 +3,11 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Blog
-subtitle: ''
-description: ''
+title: 阿木
+subtitle: '追逐光，成为光'
+description: 阿木的个人博客，记载个人的开发记录及各种开源项目的分享
 keywords:
-author: muziqiu2
+author: 阿木
 language: zh-CN
 timezone: 'Asia/Shanghai'
 
@@ -97,7 +97,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: landscape
+theme: solitude
 
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
