@@ -30,7 +30,9 @@ links:
     link_list:
       - name: 安知鱼
         link: https://blog.anheyu.com/
-        avatar: https://cdn-jsdelivr.mofashi.ltd/npm/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+        # 镜像 cdn-jsdelivr.mofashi.ltd 的未压缩路径会截断文件（2026-09-11 实测），
+        # 故一并下载到站内（7616B，JPEG 头尾标记完整）
+        avatar: /img/links/anzhiyu.jpg
         descr: 生活明朗，万物可爱
         tag: 朋友
         color: "#ffc848"

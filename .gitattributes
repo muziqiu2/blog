@@ -1,0 +1,10 @@
+# 站内自托管的第三方静态资源：禁止任何行尾/编码转换，
+# 保证仓库、工作区、构建产物与上游 npm 包逐字节一致。
+# （core.autocrlf=true 时，若不加此规则，检出会把 LF 变成 CRLF，
+#   导致本地构建与线上产物字节数不一致，排查问题时极易误判。）
+source/vendor/** -text -diff
+
+# 字体等二进制资源同样按二进制处理
+*.woff2 binary
+*.woff binary
+*.ttf binary

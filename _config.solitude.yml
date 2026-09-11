@@ -244,8 +244,30 @@ footer:
 #
 # internal（主题自身的 main.js / utils.js / index.css）保持 local = 站内自托管，
 # 不产生任何外链，无需改动。
+#
+# ⚠️ 为什么 7 个常用库不走镜像而是站内自托管（2026-09-11 实测）：
+#   镜像 cdn-jsdelivr.mofashi.ltd 的「未压缩输出」路径存在截断缺陷 ——
+#   不带 Accept-Encoding 请求时，返回的是官方文件的**前半段**（逐字节比对确认是严格前缀）：
+#     pace.min.js 12962→4676、fancybox.umd.min.js 107599→37217、all.min.css 90169→22948、
+#     pjax.min.js 23885→6857、lazyload 7267→2753、snackbar 3468→1347、fancybox.css 33000→6982
+#   带压缩请求头时内容完整，因此是否踩到取决于边缘节点/缓存状态，表现为「有时正常、有时
+#   报 SyntaxError: expected expression, got end of script / Fancybox is not defined」。
+#   且响应带 Cache-Control: immutable（1 年），一旦缓存到坏副本会长期无法自愈。
+#   故把下列 7 个库改为站内 /vendor/ 路径（文件实为官方 jsDelivr 的完整版本，已校验字节数）。
+#   镜像配置保留，供未来新增的第三方库继续使用。
 CDN:
   internal: local
   third_party: custom
   version: true
   custom_format: https://cdn-jsdelivr.mofashi.ltd/npm/${name}@${version}/${min_file}
+  # options 优先级最高（theme scripts/event/cdn.js 里最后 Object.assign，直接覆盖上面的结果）
+  # 键名 = 主题 plugins.yml 中的键；文件实体在 source/vendor/ 下，构建后需保持同层相对关系：
+  #   all.min.css 里 url(../webfonts/xxx.woff2) 依赖 fontawesome/css 与 fontawesome/webfonts 的相对位置
+  options:
+    pace_js: /vendor/pace/pace.min.js
+    pjax: /vendor/pjax/pjax.min.js
+    lazyload: /vendor/lazyload/lazyload.iife.min.js
+    snackbar: /vendor/snackbar/snackbar.min.js
+    fancyapps_ui: /vendor/fancybox/fancybox.umd.min.js
+    fancyapps_css: /vendor/fancybox/fancybox.min.css
+    fontawesome: /vendor/fontawesome/css/all.min.css
