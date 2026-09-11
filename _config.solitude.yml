@@ -5,6 +5,18 @@
 # ==============================================
 
 # ---------------------------
+# 构建选项
+# ---------------------------
+# 关闭 CSS 前缀（不 import nib）。
+# 主题 _config.yml 默认是 true，但 nib 1.2.0 会拦截现代 CSS 写法导致编译报错，
+# 进而产出 0 字节的 css/index.css（线上样式全部失效）：
+#   1) `opacity var(--x, 0)` → nib 的 opacity() 会执行 round(n * 100)，CSS 变量无法参与运算
+#   2) `linear-gradient(#fff 0 0)` → nib 的 linear-gradient() 把它当成单个 start 参数，报 "color stops required"
+# 主题自带的配置模板（scripts/event/merge_config.js 的 defaultConfig）本身也是 css_prefix: false。
+# 主题样式面向现代浏览器，需要前缀处已显式写出 -webkit- 等，关闭 nib 不影响渲染。
+css_prefix: false
+
+# ---------------------------
 # 网站信息
 # ---------------------------
 site:
