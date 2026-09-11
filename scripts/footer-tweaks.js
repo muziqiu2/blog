@@ -9,7 +9,7 @@
  *          /(<img(?!.*?class\s*=\s*['"].*?nolazyload.*?['"]).*? src=)/gi
  *    而 footer.pug 里 nolazyload 是加在外层 div 上的：
  *          #footer_mini_logo.nolazyload.footer_mini_logo(...)  ->  img(src=information.author)
- *    于是该 img 被误判为需要懒加载，src 被改写为空：<img src= "" data-lazy-src="/img/logo.png">
+ *    于是该 img 被误判为需要懒加载，src 被改写为空：<img src= "" data-lazy-src="/img/site-logo.png">
  *    一旦 JS 未执行或懒加载未接管，按钮就只剩一个 50x50 的空白圆形。
  *    这里直接把真实 src 还原回去（图片仅 4KB，无需懒加载）。
  *

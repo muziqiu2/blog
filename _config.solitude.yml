@@ -24,7 +24,11 @@ site:
   name:
     class: text
     custom: 阿木
-  icon: /img/pwa/favicon.png
+  # ⚠️ 站点 source/ 与主题 source/ 的同名文件会互相覆盖，且覆盖顺序不稳定：
+  # 本地构建站点文件胜出、GitHub Actions 构建主题文件胜出（实测）。
+  # 主题自带 /img/logo.png 是一张近乎纯白的图，一旦胜出，头像/返回顶部按钮就会「看起来是空白」。
+  # 因此站点自有素材一律改用不冲突的文件名：site-logo.png / site-favicon.png。
+  icon: /img/pwa/site-favicon.png
 
 # ---------------------------
 # 导航栏
@@ -79,7 +83,8 @@ aside:
   position: 1
   my_card:
     author:
-      img: /img/logo.png
+      # 站点自有 logo（橙色果实），不用 /img/logo.png 以免被主题同名文件覆盖
+      img: /img/site-logo.png
     description: 追逐光，成为光
     content: 记录开发日常与开源项目分享
     information:
@@ -118,7 +123,7 @@ post:
     locate: China
     copyright:
       enable: true
-      author: /img/logo.png
+      author: /img/site-logo.png
       license: CC BY-NC-SA 4.0
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
 page:
@@ -168,7 +173,7 @@ lazyload:
 # 全屏加载动画
 loading:
   fullpage: true
-  favicon: /img/pwa/favicon.png
+  favicon: /img/pwa/site-favicon.png
   pace: true
 
 # 图片灯箱（lightbox 需配合 fancybox 或 mediumZoom，二者只能开一个）
@@ -206,7 +211,7 @@ footer:
   # 但站点已有导航栏 / 侧栏 / 页脚「项目」栏等多处 Github 入口，此处隐藏。
   information:
     # author 同时充当页脚中央的「返回顶部」圆形按钮（点击回顶）
-    author: /img/logo.png
+    author: /img/site-logo.png
   # 页脚分组：三项 => 三栏自动并排（#st-footer 为 flex + space-evenly）
   group:
     探索:
