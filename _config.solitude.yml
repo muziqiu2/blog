@@ -1,7 +1,8 @@
 # ==============================================
 # Solitude 主题配置（站点级覆盖）
-# 文档：https://solitude.js.org
-# 说明：本文件会与主题自带 _config.yml 深度合并，只需写需要覆盖的项
+# 文档：https://solitude.js.org/cn/docs/hexo/configuration/site
+# 说明：本文件与主题自带 _config.yml 深度合并，只需写需要覆盖的项
+#       主题默认几乎全部模块 enable: false，官方演示效果需要显式开启
 # ==============================================
 
 # ---------------------------
@@ -40,22 +41,176 @@ nav:
     我的:
       关于: /about/ || fas fa-user
       音乐馆: /music/ || fas fa-music
+  right:
+    # 随机文章按钮
+    random: true
 
 # ---------------------------
-# 侧边栏信息卡
+# 首页顶部
 # ---------------------------
+# Solitude 4 的首页顶部是「推荐内容轮播」（home-center）：
+# 数据 = recommendList 配置项 + 最近 5 条带 cover 的文章，最多 5 个。
+# 所以文章必须有 cover 字段，否则顶部区域为空。
+hometop:
+  enable: true
+  recommendList:
+    - order: 1
+      sup: 推荐
+      title: 自由播放器
+      url: https://zybfq.mofashi.ltd/
+      img: /img/covers/1751468545.png
+      color: none
+
+# ---------------------------
+# 侧边栏
+# ---------------------------
+# Sticky(吸顶) / noSticky(不吸顶) 可选值：
+#   about(信息卡) newestPost(最新文章) allInfo(网站信息) newest_comment(最新评论)
 aside:
+  home:
+    noSticky: "about"
+    Sticky: "allInfo"
+  post:
+    noSticky: "about"
+    Sticky: "newestPost"
+  page:
+    noSticky: "about"
+    Sticky: "newestPost,allInfo"
+  # 侧栏位置：0 左 / 1 右
+  position: 1
   my_card:
     author:
       img: /img/logo.png
     description: 追逐光，成为光
+    content: 记录开发日常与开源项目分享
     information:
       Github: https://github.com/muziqiu2 || fab fa-github
+  toc:
+    post: true
+    page: false
+    vague: true
+  tags:
+    enable: true
+    limit: 20
+  siteinfo:
+    postcount: true
+    pv: true
+    uv: true
+    updatetime: true
+    runtimeenable: true
+    runtime: "2023-02-27 00:00:00"
 
 # ---------------------------
-# 页脚（备案信息）
+# 首页文章列表
+# ---------------------------
+index_post_list:
+  direction: column # row / column
+  column: 2
+  cover: both
+
+# ---------------------------
+# 文章 / 页面默认值
+# ---------------------------
+post:
+  default:
+    cover:
+      - /img/default_cover.jpg
+    locate: China
+    copyright:
+      enable: true
+      author: /img/logo.png
+      license: CC BY-NC-SA 4.0
+      licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
+page:
+  error: true
+  tags: true
+  categories: true
+  default:
+    cover:
+      - /img/default_cover.jpg
+
+# ---------------------------
+# 外观
+# ---------------------------
+# 主题色：深色模式 #ffc848 / 浅色模式 #425AEF
+theme_color:
+  dark: "#ffc848"
+  light: "#425AEF"
+  nav_hover_text:
+    dark: "#1b1c20"
+    light: "#ffffff"
+
+display_mode:
+  type: auto
+  universe: false
+
+font:
+  font-size: 16px
+  code-font-size: 16px
+  font-family: "PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif"
+  code-font-family: '"JetBrains Mono", "Fira Code", monospace'
+
+# 代码块高亮
+highlight:
+  enable: true
+  limit: 200
+  copy: true
+  expand: true
+  theme: mac
+  color: default
+
+# 图片懒加载
+lazyload:
+  enable: true
+  field: site
+  errorimg: /img/error_load.avif
+
+# 全屏加载动画
+loading:
+  fullpage: true
+  favicon: /img/pwa/favicon.png
+  pace: true
+
+# 图片灯箱（lightbox 需配合 fancybox 或 mediumZoom，二者只能开一个）
+lightbox: true
+fancybox: true
+mediumZoom: false
+
+# ---------------------------
+# 右下角悬停工具栏
+# ---------------------------
+rightside:
+  enable: true
+  percent: true
+  hide:
+    enable: false
+    translate: false
+    mode: false
+    aside: false
+
+# ---------------------------
+# 搜索（本地搜索，依赖 hexo-generator-searchdb 生成 search.xml）
+# ---------------------------
+search:
+  enable: true
+  type: local
+  local:
+    preload: true
+
+# ---------------------------
+# 页脚
 # ---------------------------
 footer:
+  information:
+    author: /img/logo.png
+    left:
+      Github: https://github.com/muziqiu2 || fab fa-github
+  group:
+    导航:
+      归档: /archives/
+      分类: /categories/
+      标签: /tags/
+      友情链接: /links/
   beian:
     - name: 鲁ICP备2022005744号-3
       url: https://beian.miit.gov.cn/

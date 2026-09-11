@@ -99,6 +99,14 @@ ignore:
 ## Themes: https://hexo.io/themes/
 theme: solitude
 
+# Local Search (hexo-generator-searchdb)
+## 生成 search.xml 供 solitude 主题的本地搜索使用
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html
+
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
