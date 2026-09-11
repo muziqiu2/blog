@@ -1,0 +1,34 @@
+# ==============================================
+# 友情链接数据
+# 由 source/links/index.md（type: links, data: links）读取
+# 字段对应主题模板 layout/includes/page/links.pug
+# 内容迁移自旧站 muziqiu2/bloggr 的 /link/ 页面
+# ==============================================
+
+swiper: true
+banner_suffix: ""
+
+links:
+  - class_name: 框架
+    descr: 本站使用的技术框架
+    type: item
+    suffix: ""
+    link_list:
+      - name: Hexo
+        link: https://hexo.io/zh-cn/
+        avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+        descr: 快速、简单且强大的网站框架
+        tag: 框架
+        color: "#425AEF"
+
+  - class_name: 推荐博客
+    descr: 我关注的个人站点
+    type: item
+    suffix: ""
+    link_list:
+      - name: 安知鱼
+        link: https://blog.anheyu.com/
+        avatar: https://npm.elemecdn.com/anzhiyu-blog-static@1.0.4/img/avatar.jpg
+        descr: 生活明朗，万物可爱
+        tag: 朋友
+        color: "#ffc848"

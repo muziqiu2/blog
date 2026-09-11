@@ -1,0 +1,219 @@
+# ==============================================
+# 关于页数据
+# 由 source/about/index.md（type: about）读取
+# 字段严格对应主题模板 layout/includes/widgets/page/about/*.pug
+# 内容迁移自旧站 muziqiu2/bloggr 的 /about/ 页面
+# ==============================================
+
+title: 关于我
+
+# 作者信息卡（左右标签 + 头像）
+authorinfo:
+  leftTags:
+    - 🤖️ 数码科技爱好者
+    - 🔍 分享与热心帮助
+    - 🏠 智能家居小能手
+    - 🔨 设计开发一条龙
+  rightTags:
+    - 专修交互与设计 🤝
+    - 脚踏实地行动派 🏃
+    - 团队小组发动机 🧱
+    - 壮汉人狠话不多 💢
+  image: /img/about/avatar.jpg
+
+# 自我介绍 + 滚动标语
+contentinfo:
+  sup: 你好，很高兴认识你👋
+  name: 阿木
+  title: 是一名 前端工程师、独立开发者、博主
+  tip: 追求
+  slogan: 源于<br/>热爱而去 感受
+  mask:
+    - 学习
+    - 生活
+    - 程序
+    - 体验
+
+# 技能
+skills:
+  title: 技能
+  subtitle: 开启创造力
+  tags:
+    - title: Java
+      img: /img/skills/java-14.svg
+      color: "#fff"
+    - title: Docker
+      img: /img/skills/docker-4.svg
+      color: "#57b6e6"
+    - title: Photoshop
+      img: /img/skills/adobe-photoshop-2.svg
+      color: "#4082c3"
+    - title: Node
+      img: /img/skills/node-logo.svg
+      color: "#333"
+    - title: Webpack
+      img: /img/skills/webpack-icon.svg
+      color: "#2e3a41"
+    - title: Pinia
+      img: /img/skills/pinia-logo.svg
+      color: "#fff"
+    - title: Python
+      img: /img/skills/python-5.svg
+      color: "#fff"
+    - title: Vite
+      img: /img/skills/vite-logo.svg
+      color: "#937df7"
+    - title: Flutter
+      img: /img/skills/flutter-logo.svg
+      color: "#4499e4"
+    - title: Vue
+      img: /img/skills/vue-9.svg
+      color: "#b8f0ae"
+    - title: React
+      img: /img/skills/react-2.svg
+      color: "#222"
+    - title: CSS
+      img: /img/skills/css-4.svg
+      color: "#2c51db"
+    - title: JS
+      img: /img/skills/logo-javascript.svg
+      color: "#f7cb4f"
+    - title: HTML
+      img: /img/skills/html-1.svg
+      color: "#e9572b"
+    - title: Git
+      img: /img/skills/git-icon.svg
+      color: "#fff"
+
+# 生涯（模板渲染为「school, major」）
+careers:
+  title: 生涯
+  subtitle: 无限进步
+  items:
+    - school: 国家电网技术学院
+      major: 动力工程
+      color: "#357ef5"
+  image: /img/about/career.png
+
+# 性格
+personalities:
+  tips: 性格
+  title: 执政官
+  type: ESFJ-A
+  color: "#ac899c"
+  image: /img/about/esfj-a.svg
+  linkText: 16personalities
+  typeName: 执政官
+  typeLink: https://www.16personalities.com/ch/esfj-人格
+  myphoto: /img/about/myphoto.png
+
+# 座右铭
+motto:
+  title: 座右铭
+  prefix: 追逐光，
+  content: 成为光。
+
+# 特长
+expertise:
+  title: 特长
+  prefix: 精通
+  specialist: 嵌入式开发及java后端开发
+  content: 钻研指数
+  level: MAX
+
+# 爱好：游戏
+game:
+  - title: 爱好游戏
+    subtitle: 怪物猎人：世界
+    img: /img/about/game.jpg
+    box_shadow: 0 8px 16px -4px rgba(0, 0, 0, .2)
+    tips_right: 账号：别想偷吃糖
+
+# 爱好：番剧 / 关注偏好 / 音乐偏好
+likes:
+  - type: comic
+    tips: 爱好番剧
+    title: 追番
+    list:
+      - name: 灵笼
+        href: https://www.bilibili.com/video/av58842093
+        cover: /img/about/comic-1.webp
+      - name: 凡人修仙传
+        href: https://www.bilibili.com/video/av478818261
+        cover: /img/about/comic-2.webp
+      - name: 非人哉
+        href: https://www.bilibili.com/video/av42219504
+        cover: /img/about/comic-3.webp
+      - name: 鬼灭之刃
+        href: https://www.bilibili.com/video/av712552253
+        cover: /img/about/comic-4.webp
+      - name: 仙王的日常生活
+        href: https://www.bilibili.com/video/av494796413
+        cover: /img/about/comic-5.webp
+  - type: like-technology
+    tips: 关注偏好
+    title: 数码科技
+    subtips: 手机、电脑软硬件
+    bg: /img/about/technology.webp
+  - type: like-music
+    tips: 音乐偏好
+    title: 许嵩、民谣、华语流行
+    subtips: 跟 阿木 一起欣赏更多音乐
+    bg: /img/about/music.jpg
+
+# 地图 + 个人信息
+oneself:
+  location: 中国，聊城市
+  birthYear: "2002"
+  university: 国家电网技术学院
+  major: 动力工程
+  occupation: 旧雨烟阁创始人
+  map:
+    light: /img/about/map.png
+    dark: /img/about/map.png
+
+# 赞赏名单
+award:
+  enable: true
+  description: 感谢因为有你们，让我更加有创作的动力。
+  tips: 共收到 {sum} 元赞赏
+rewardList:
+  - name: 海阔蓝
+    money: 8.8
+    time: 2023-03-28
+  - name: LK66
+    money: 66.6
+    time: 2023-03-24
+  - name: 张时貳
+    money: 6.6
+    time: 2023-01-22
+  - name: ZeroAf
+    money: 9.9
+    time: 2022-12-14
+  - name: LuckyWangXi
+    money: 6.6
+    time: 2022-12-14
+  - name: 刀中日月长
+    money: 10
+    time: 2022-11-16
+  - name: 鹿啵包
+    money: 10
+    time: 2022-11-08
+  - name: 伴舟先生大霖子
+    money: 4.03
+    time: 2022-10-27
+  - name: Magica_0x0
+    money: 3.36
+    time: 2022-10-07
+  - name: 名字就是要短像这样
+    money: 3.36
+    time: 2022-08-25
+  - name: Leviathan520
+    money: 1.34
+    time: 2022-08-23
+  - name: 托马斯
+    money: 10
+    time: 2022-08-19
+  - name: 哇是猫猫欸
+    money: 1.34
+    time: 2022-08-19

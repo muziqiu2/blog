@@ -1,4 +1,7 @@
 ---
 title: 关于
 date: 2026-09-11 00:04:21
+type: about
+comment: false
+aside: false
 ---

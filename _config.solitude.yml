@@ -40,7 +40,6 @@ nav:
       友情链接: /links/ || fas fa-user-group
     我的:
       关于: /about/ || fas fa-user
-      音乐馆: /music/ || fas fa-music
   right:
     # 随机文章按钮
     random: true
@@ -94,6 +93,7 @@ aside:
     limit: 20
   siteinfo:
     postcount: true
+    wordcount: true
     pv: true
     uv: true
     updatetime: true
@@ -201,16 +201,22 @@ search:
 # 页脚
 # ---------------------------
 footer:
+  # 社交图标区（#footer_deal）
+  # 左侧 left 已清空：原来这里的 Github 图标与「返回顶部」圆形头像并排，
+  # 但站点已有导航栏 / 侧栏 / 页脚「项目」栏等多处 Github 入口，此处隐藏。
   information:
+    # author 同时充当页脚中央的「返回顶部」圆形按钮（点击回顶）
     author: /img/logo.png
-    left:
-      Github: https://github.com/muziqiu2 || fab fa-github
+  # 页脚分组：三项 => 三栏自动并排（#st-footer 为 flex + space-evenly）
   group:
-    导航:
+    探索:
       归档: /archives/
       分类: /categories/
       标签: /tags/
-      友情链接: /links/
+    关于:
+      友链: /links/
+    项目:
+      GitHub: https://github.com/muziqiu2
   beian:
     - name: 鲁ICP备2022005744号-3
       url: https://beian.miit.gov.cn/
