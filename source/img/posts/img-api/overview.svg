@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="632" viewBox="0 0 1200 632" role="img">
+<defs>
+  <linearGradient id="gIndigo" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#6366f1"/><stop offset="100%" stop-color="#8b5cf6"/>
+  </linearGradient>
+  <linearGradient id="gCyan" x1="0" y1="0" x2="1" y2="1">
+    <stop offset="0%" stop-color="#06b6d4"/><stop offset="100%" stop-color="#0891b2"/>
+  </linearGradient>
+  <linearGradient id="gArea" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0%" stop-color="#6366f1" stop-opacity="0.28"/>
+    <stop offset="100%" stop-color="#6366f1" stop-opacity="0.02"/>
+  </linearGradient>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="150%">
+    <feDropShadow dx="0" dy="2" stdDeviation="6" flood-color="#0f172a" flood-opacity="0.07"/>
+  </filter>
+  <style>
+    .t{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Microsoft YaHei","PingFang SC","Hiragino Sans GB",sans-serif}
+    .m{font-family:ui-monospace,SFMono-Regular,Consolas,"Courier New",monospace}
+    .h1{font-size:26px;font-weight:700;fill:#0f172a}
+    .h2{font-size:17px;font-weight:700;fill:#0f172a}
+    .b{font-size:13px;fill:#64748b}
+    .s{font-size:11.5px;fill:#64748b}
+    .k{font-size:12px;font-weight:600}
+  </style>
+</defs>
+<rect width="1200" height="632" fill="#f8fafc"/>
+
+  <text x="40" y="52" class="t h1">魔法师随机图片 API · 功能总览</text>
+  <text x="40" y="80" class="t b">v3.2.3.5 ｜ 142 次提交 ｜ PHP + SQLite ｜ 累计调用 12.5 万+</text>
+  <rect x="40" y="94" width="60" height="4" rx="2" fill="url(#gIndigo)"/>
+<g filter="url(#sh)">
+  <rect x="40" y="112" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M40 126 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#eef2ff"/>
+  <rect x="40" y="127" width="358" height="3" fill="#6366f1" opacity="0.85"/>
+</g><circle cx="78" cy="156" r="17" fill="#eef2ff"/><rect x="70" y="148" width="7" height="7" rx="2" fill="#6366f1"/><rect x="79" y="148" width="7" height="7" rx="2" fill="#6366f1" opacity=".55"/><rect x="70" y="157" width="7" height="7" rx="2" fill="#6366f1" opacity=".55"/><rect x="79" y="157" width="7" height="7" rx="2" fill="#6366f1"/><text x="106" y="154" class="t h2">三入口自适应</text><text x="62" y="194" class="t b">api.php 自动识别设备，pc.p</text><text x="62" y="214" class="t b">hp / pe.php 定点出图，一套</text><text x="62" y="234" class="t b">图库服务三种场景</text>
+<g filter="url(#sh)">
+  <rect x="420" y="112" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M420 126 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#ecfeff"/>
+  <rect x="420" y="127" width="358" height="3" fill="#0891b2" opacity="0.85"/>
+</g><circle cx="458" cy="156" r="17" fill="#ecfeff"/><path d="M460 147 L452 157 h5 l-1 8 L464 155 h-5 z" fill="#0891b2"/><text x="486" y="154" class="t h2">双输出模式</text><text x="442" y="194" class="t b">302 跳转省流量，代理模式由服务器代</text><text x="442" y="214" class="t b">转、隐藏真实图片地址</text>
+<g filter="url(#sh)">
+  <rect x="800" y="112" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M800 126 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#fffbeb"/>
+  <rect x="800" y="127" width="358" height="3" fill="#d97706" opacity="0.85"/>
+</g><circle cx="838" cy="156" r="17" fill="#fffbeb"/><path d="M830 151 l8 -4 l8 4 v10 l-8 4 l-8 -4 z" fill="none" stroke="#d97706" stroke-width="2" stroke-linejoin="round"/><path d="M830 151 l8 4 l8 -4 M838 155 v10" fill="none" stroke="#d97706" stroke-width="1.6"/><text x="866" y="154" class="t h2">缓存与 JSON</text><text x="822" y="194" class="t b">cache=3600 控制重复返回间隔</text><text x="822" y="214" class="t b">，?format=json 直接拿图片</text><text x="822" y="234" class="t b">地址</text>
+<g filter="url(#sh)">
+  <rect x="40" y="272" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M40 286 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#ecfdf5"/>
+  <rect x="40" y="287" width="358" height="3" fill="#059669" opacity="0.85"/>
+</g><circle cx="78" cy="316" r="17" fill="#ecfdf5"/><rect x="69" y="317" width="5" height="8" rx="1.5" fill="#059669" opacity=".5"/><rect x="76" y="312" width="5" height="13" rx="1.5" fill="#059669"/><rect x="83" y="308" width="5" height="17" rx="1.5" fill="#059669" opacity=".5"/><text x="106" y="314" class="t h2">调用统计</text><text x="62" y="354" class="t b">按天落库，PC / 移动端分渠道统计，</text><text x="62" y="374" class="t b">首页 Chart.js 趋势图</text>
+<g filter="url(#sh)">
+  <rect x="420" y="272" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M420 286 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#eef2ff"/>
+  <rect x="420" y="287" width="358" height="3" fill="#6366f1" opacity="0.85"/>
+</g><circle cx="458" cy="316" r="17" fill="#eef2ff"/><circle cx="458" cy="316" r="4" fill="none" stroke="#6366f1" stroke-width="2"/><path d="M458 307 v3 M458 322 v3 M449 316 h3 M464 316 h3 M451.6 309.6 l2.1 2.1 M462.3 320.3 l2.1 2.1 M464.4 309.6 l-2.1 2.1 M453.7 320.3 l-2.1 2.1" stroke="#6366f1" stroke-width="2" stroke-linecap="round"/><text x="486" y="314" class="t h2">管理后台</text><text x="442" y="354" class="t b">图片增删与批量导入、操作日志、网站信息</text><text x="442" y="374" class="t b">自定义、一键环境自检</text>
+<g filter="url(#sh)">
+  <rect x="800" y="272" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M800 286 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#ecfeff"/>
+  <rect x="800" y="287" width="358" height="3" fill="#0891b2" opacity="0.85"/>
+</g><circle cx="838" cy="316" r="17" fill="#ecfeff"/><path d="M846 313 a8 8 0 0 0 -14 -4 M830 319 a8 8 0 0 0 14 4" fill="none" stroke="#0891b2" stroke-width="2" stroke-linecap="round"/><path d="M831 308 l1 5 l5 -1 M845 324 l-1 -5 l-5 1" fill="none" stroke="#0891b2" stroke-width="2" stroke-linecap="round"/><text x="866" y="314" class="t h2">在线更新</text><text x="822" y="354" class="t b">基于 GitHub Releases，</text><text x="822" y="374" class="t b">更新前自动备份，失败自动回滚</text>
+<g filter="url(#sh)">
+  <rect x="40" y="432" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M40 446 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#fff1f2"/>
+  <rect x="40" y="447" width="358" height="3" fill="#e11d48" opacity="0.85"/>
+</g><circle cx="78" cy="476" r="17" fill="#fff1f2"/><path d="M78 467 l8 3 v6 c0 5 -3.5 8 -8 9 c-4.5 -1 -8 -4 -8 -9 v-6 z" fill="none" stroke="#e11d48" stroke-width="2"/><path d="M74.5 476 l2.5 2.5 l4.5 -4.5" fill="none" stroke="#e11d48" stroke-width="2" stroke-linecap="round"/><text x="106" y="474" class="t h2">安全防护</text><text x="62" y="514" class="t b">SSRF 防护、CSRF Token、</text><text x="62" y="534" class="t b">登录锁定、频率限制、XSS 转义</text>
+<g filter="url(#sh)">
+  <rect x="420" y="432" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M420 446 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#ecfdf5"/>
+  <rect x="420" y="447" width="358" height="3" fill="#059669" opacity="0.85"/>
+</g><circle cx="458" cy="476" r="17" fill="#ecfdf5"/><ellipse cx="458" cy="470" rx="8" ry="3.2" fill="none" stroke="#059669" stroke-width="2"/><path d="M450 470 v12 a8 3.2 0 0 0 16 0 v-12" fill="none" stroke="#059669" stroke-width="2"/><text x="486" y="474" class="t h2">SQLite 单文件</text><text x="442" y="514" class="t b">零配置存储，备份即拷一个文件，可选 A</text><text x="442" y="534" class="t b">PCu 内存加速</text>
+<g filter="url(#sh)">
+  <rect x="800" y="432" width="358" height="138" rx="14" fill="#ffffff" stroke="#e2e8f0"/>
+  <path d="M800 446 a14 14 0 0 1 14 -14 h330 a14 14 0 0 1 14 14 v4 h-358 z" fill="#fffbeb"/>
+  <rect x="800" y="447" width="358" height="3" fill="#d97706" opacity="0.85"/>
+</g><circle cx="838" cy="476" r="17" fill="#fffbeb"/><path d="M830 471 l8 -4 l8 4 v10 l-8 4 l-8 -4 z" fill="none" stroke="#d97706" stroke-width="2" stroke-linejoin="round"/><path d="M830 471 l8 4 l8 -4 M838 475 v10" fill="none" stroke="#d97706" stroke-width="1.6"/><text x="866" y="474" class="t h2">一键部署</text><text x="822" y="514" class="t b">Docker 镜像开箱即用，附 Ngi</text><text x="822" y="534" class="t b">nx 敏感目录防护示例，MIT 开源</text>
+</svg>
