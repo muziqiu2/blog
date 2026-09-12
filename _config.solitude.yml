@@ -124,7 +124,8 @@ post:
     locate: China
     copyright:
       enable: true
-      author: /img/site-logo.png
+      # 文章版权卡片左侧的圆形作者头像：全站统一用同一张（= 侧栏信息卡头像）
+      author: /img/site-avatar.jpg
       license: CC BY-NC-SA 4.0
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
 page:
@@ -174,7 +175,10 @@ lazyload:
 # 全屏加载动画
 loading:
   fullpage: true
-  favicon: /img/pwa/site-favicon.png
+  # 加载页中央的图片（模板 `layout/includes/loading.pug` 里取 theme.loading.favicon，
+  # 渲染成 100×100 的圆形）。全站头像/加载图统一为同一张，且与侧栏头像同 URL，
+  # 浏览器只需下载一次即可两处复用。
+  favicon: /img/site-avatar.jpg
   pace: true
 
 # 图片灯箱（lightbox 需配合 fancybox 或 mediumZoom，二者只能开一个）
@@ -213,8 +217,8 @@ footer:
   information:
     # 该字段只用于「让返回顶部按钮渲染出来」——实际图标由站点后处理脚本
     # scripts/footer-tweaks.js 替换为向上的箭头图标（fas fa-arrow-up），
-    # 因此这里的路径不会被真正显示，保留一个站内图片仅作兜底。
-    author: /img/site-logo.png
+    # 因此这里的路径不会被真正显示；仍填统一头像，避免哪天脚本失效时露出一张不一致的图。
+    author: /img/site-avatar.jpg
   # 页脚分组：三项 => 三栏自动并排（#st-footer 为 flex + space-evenly）
   group:
     探索:

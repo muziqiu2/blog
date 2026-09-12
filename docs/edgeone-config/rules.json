@@ -1,0 +1,105 @@
+{
+  "FormatVersion": "1.0",
+  "Rules": [
+    {
+      "RuleName": "默认-HTML与其余资源",
+      "Branches": [
+        {
+          "Condition": "${http.request.host} in ['blog.20020831.xyz']",
+          "Actions": [
+            {
+              "Name": "Cache",
+              "CacheParameters": {
+                "CustomTime": {
+                  "Switch": "on",
+                  "IgnoreCacheControl": "on",
+                  "CacheTime": 300
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "RuleName": "索引与数据文件",
+      "Branches": [
+        {
+          "Condition": "${http.request.file_extension} in ['xml', 'json']",
+          "Actions": [
+            {
+              "Name": "Cache",
+              "CacheParameters": {
+                "CustomTime": {
+                  "Switch": "on",
+                  "IgnoreCacheControl": "on",
+                  "CacheTime": 300
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "RuleName": "图片与字体",
+      "Branches": [
+        {
+          "Condition": "${http.request.file_extension} in ['png', 'jpg', 'jpeg', 'gif', 'webp', 'avif', 'svg', 'ico', 'bmp', 'woff', 'woff2', 'ttf', 'otf', 'eot']",
+          "Actions": [
+            {
+              "Name": "Cache",
+              "CacheParameters": {
+                "CustomTime": {
+                  "Switch": "on",
+                  "IgnoreCacheControl": "on",
+                  "CacheTime": 2592000
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "RuleName": "样式与脚本",
+      "Branches": [
+        {
+          "Condition": "${http.request.file_extension} in ['css', 'js', 'mjs']",
+          "Actions": [
+            {
+              "Name": "Cache",
+              "CacheParameters": {
+                "CustomTime": {
+                  "Switch": "on",
+                  "IgnoreCacheControl": "on",
+                  "CacheTime": 86400
+                }
+              }
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "RuleName": "自托管第三方库-最高优先级",
+      "Branches": [
+        {
+          "Condition": "${http.request.uri.path} matches '^/vendor/'",
+          "Actions": [
+            {
+              "Name": "Cache",
+              "CacheParameters": {
+                "CustomTime": {
+                  "Switch": "on",
+                  "IgnoreCacheControl": "on",
+                  "CacheTime": 604800
+                }
+              }
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
