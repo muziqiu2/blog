@@ -54,14 +54,16 @@ nav:
 # Solitude 4 的首页顶部是「推荐内容轮播」（home-center）：
 # 数据 = recommendList 配置项 + 最近 5 条带 cover 的文章，最多 5 个。
 # 所以文章必须有 cover 字段，否则顶部区域为空。
+# recommendList 里的 url 若写成站内文章路径（= 该文章的 post.path），
+# 主题会自动把它从「最近文章」里剔除，避免同一篇在轮播里出现两次。
 hometop:
   enable: true
   recommendList:
     - order: 1
       sup: 推荐
-      title: 自由播放器
-      url: https://zybfq.mofashi.ltd/
-      img: /img/covers/1751468545.png
+      title: 开发日记之随机图片 API：从 v2.0 到 v3.2.3.5
+      url: /2026/09/12/5298729416/
+      img: /img/covers/5298729416.svg
       color: none
 
 # ---------------------------
@@ -85,7 +87,7 @@ aside:
     author:
       # 站内头像（已本地化，避免外链失效）。
       # 注意：主题不会自动获取 QQ 头像，这里是直接渲染 <img src="该值">。
-      img: /img/site-avatar.jpg
+      img: /img/site-avatar.webp
     description: 追逐光，成为光
     content: 记录开发日常与开源项目分享
     information:
@@ -120,12 +122,12 @@ index_post_list:
 post:
   default:
     cover:
-      - /img/default_cover.jpg
+      - /img/default_cover.webp
     locate: China
     copyright:
       enable: true
       # 文章版权卡片左侧的圆形作者头像：全站统一用同一张（= 侧栏信息卡头像）
-      author: /img/site-avatar.jpg
+      author: /img/site-avatar.webp
       license: CC BY-NC-SA 4.0
       licenurl: https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh-hans
 page:
@@ -134,7 +136,7 @@ page:
   categories: true
   default:
     cover:
-      - /img/default_cover.jpg
+      - /img/default_cover.webp
 
 # ---------------------------
 # 外观
@@ -178,7 +180,7 @@ loading:
   # 加载页中央的图片（模板 `layout/includes/loading.pug` 里取 theme.loading.favicon，
   # 渲染成 100×100 的圆形）。全站头像/加载图统一为同一张，且与侧栏头像同 URL，
   # 浏览器只需下载一次即可两处复用。
-  favicon: /img/site-avatar.jpg
+  favicon: /img/site-avatar.webp
   pace: true
 
 # 图片灯箱（lightbox 需配合 fancybox 或 mediumZoom，二者只能开一个）
@@ -218,7 +220,7 @@ footer:
     # 该字段只用于「让返回顶部按钮渲染出来」——实际图标由站点后处理脚本
     # scripts/footer-tweaks.js 替换为向上的箭头图标（fas fa-arrow-up），
     # 因此这里的路径不会被真正显示；仍填统一头像，避免哪天脚本失效时露出一张不一致的图。
-    author: /img/site-avatar.jpg
+    author: /img/site-avatar.webp
   # 页脚分组：三项 => 三栏自动并排（#st-footer 为 flex + space-evenly）
   group:
     探索:

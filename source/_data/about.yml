@@ -19,7 +19,7 @@ authorinfo:
     - 脚踏实地行动派 🏃
     - 团队小组发动机 🧱
     - 壮汉人狠话不多 💢
-  image: /img/site-avatar.jpg
+  image: /img/site-avatar.webp
 
 # 自我介绍 + 滚动标语
 contentinfo:
@@ -93,7 +93,7 @@ careers:
     - school: 国家电网技术学院
       major: 动力工程
       color: "#357ef5"
-  image: /img/about/career.png
+  image: /img/about/career.webp
 
 # 性格
 personalities:
@@ -105,7 +105,7 @@ personalities:
   linkText: 16personalities
   typeName: 执政官
   typeLink: https://www.16personalities.com/ch/esfj-人格
-  myphoto: /img/about/myphoto.png
+  myphoto: /img/about/myphoto.webp
 
 # 座右铭
 motto:
@@ -125,7 +125,7 @@ expertise:
 game:
   - title: 爱好游戏
     subtitle: 怪物猎人：世界
-    img: /img/about/game.jpg
+    img: /img/about/game.webp
     box_shadow: 0 8px 16px -4px rgba(0, 0, 0, .2)
     tips_right: 账号：别想偷吃糖
 
@@ -159,7 +159,7 @@ likes:
     tips: 音乐偏好
     title: 许嵩、民谣、华语流行
     subtips: 跟 阿木 一起欣赏更多音乐
-    bg: /img/about/music.jpg
+    bg: /img/about/music.webp
 
 # 地图 + 个人信息
 oneself:
@@ -169,8 +169,8 @@ oneself:
   major: 动力工程
   occupation: 旧雨烟阁创始人
   map:
-    light: /img/about/map.png
-    dark: /img/about/map.png
+    light: /img/about/map.webp
+    dark: /img/about/map.webp
 
 # 赞赏名单
 award:

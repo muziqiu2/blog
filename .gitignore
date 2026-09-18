@@ -9,3 +9,6 @@ _multiconfig.yml
 .workbuddy/
 .shots/
 docs/preview/
+# 图片瘦身时留的原始备份 / 本次截图原图（均属工作产物，不入库）
+_imgbak/
+_shots/
