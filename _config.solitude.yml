@@ -56,6 +56,11 @@ nav:
 # 所以文章必须有 cover 字段，否则顶部区域为空。
 # recommendList 里的 url 若写成站内文章路径（= 该文章的 post.path），
 # 主题会自动把它从「最近文章」里剔除，避免同一篇在轮播里出现两次。
+#
+# ⚠️ color 千万别写主题默认示例里的 "none"：主题的 explicitColor() 只过滤含 "var(" 的值，
+# "none" 会被原样写进 --current-theme / --home-center-theme，而右侧栏是
+# `background: var(--current-theme, var(--efu-theme))` —— "none" 等于无背景，右侧栏会变成
+# 透明透出卡片白底。留空或写 var(--efu-main) 才会走站点主色。
 hometop:
   enable: true
   recommendList:
@@ -64,7 +69,7 @@ hometop:
       title: 开发日记之随机图片 API：从 v2.0 到 v3.2.3.5
       url: /2026/09/12/5298729416/
       img: /img/covers/5298729416.svg
-      color: none
+      color: "var(--efu-main)"
 
 # ---------------------------
 # 侧边栏
